@@ -111,7 +111,7 @@ defmodule MyXQL.Protocol do
 
     <<capability_flags::uint4>> = <<capability_flags1::uint2, capability_flags2::uint2>>
     # all set in servers since MySQL 4.1
-    required_capabilities = [:client_protocol_41, :client_plugin_auth, :client_secure_connection]
+    required_capabilities = [:client_protocol_41, :client_secure_connection]
 
     with :ok <- ensure_capabilities(capability_flags, required_capabilities) do
       <<
